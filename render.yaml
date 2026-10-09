@@ -1,10 +1,7 @@
 services:
   - type: web
-    name: oidc-frontend
-    runtime: static
-    buildCommand: npm run build
-    staticPublishPath: ./frontend/dist
-    routes:
-      - type: rewrite
-        source: /*
-        destination: /index.html
+    name: oidc-web-app
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
+    region: frankfurt
